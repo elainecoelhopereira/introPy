@@ -23,15 +23,15 @@ def contagem_progressiva(fim):
 
 def apoiar_candidato(nome, vezes):
     for numero in range(vezes):
-        #contador = numero + 1 #contador recebe numero+1
-        #print(f'{contador} - {nome}')
+        # contador = numero + 1
+        # print(f'{contador} - {nome}')
 
-        if numero < 9: # acrescentar 0 na numeração de 1 a 9 p ficar alinhado
+        if numero < 9:
             print(f'00{numero + 1} - {nome}')
         elif numero < 99:
             print(f'0{numero + 1} - {nome}')
         else:
-            print(numero + 1, '-', nome) #pode retirar as linhas 26 e 27 e substitui por essa linha de codigo
+            print(numero + 1,'-', nome)
 
 def brincar_de_plim(fim):
     for numero in range(fim):
@@ -42,25 +42,49 @@ def brincar_de_plim(fim):
 
 # estrutura de identificação / execução do script
 if __name__ == '__main__':
-    print_hi('José')
 
-    # chamar a função de calculo da área do retângulo
-    resultado = calcular_area_do_retangulo(3,4)
-    print(f'A area do retângulo é de {resultado} m²')
+    resposta = 'C'
 
-    # chamar a função de cálculo da área do quadrado
-    resultado = calcular_area_do_quadrado(5)
-    print(f'A area do quadrado é de {resultado} m²')
+    while resposta.upper() != 'Z':  #mandar repetir tudo enquanto for diferente de Z
 
-    #chamar a função de calculo da area do triângulo
-    resultado = calcular_area_do_triangulo(6,7)
-    print(f'A area do triângulo é de {resultado} m²')
+        print('###########################################')
+        print('#                                         #')
+        print('#       MENU      DE      OPÇÕES          #')
+        print('#                                         #')
+        print('#      1 - Olá Mundo                      #')
+        print('#      2 - Area do retângulo              #')
+        print('#      3 - Area do Quadrado               #')
+        print('#      4 - Area do Triângulo              #')
+        print('#      5 - Contagem Progressiva           #')
+        print('#      6 - Apoiar Candidato               #')
+        print('#      7 - Brincar de Plim                #')
+        print('#                                         #')
+        print('#      Z - Sair                           #')
+        print('#                                         #')
+        print('###########################################')
 
-    #executar uma contagem progressiva
-    contagem_progressiva(11)
+        resposta = input("Escolha a sua opção")
+        print(f'A sua escolha foi: {resposta}')
 
-    # exibir o nome do candidato varias vezes
-    apoiar_candidato('Faker', 100) #chama o nome da função apoiar candidato, passa o texto com aspa simples e 10 numero de vezes
-
-    #brincar de plim
-    brincar_de_plim(100)
+        if resposta.upper() != 'Z':
+            if resposta == '1':
+                print_hi('José')
+            elif resposta == '2':
+                resultado = calcular_area_do_retangulo(8, 7)
+                print(f'A área do retângulo é de {resultado} m²')
+            elif resposta == '3':
+                resultado = calcular_area_do_quadrado(6)
+                print(f'A área do quadrado é de {resultado} m²')
+            elif resposta == '4':
+                resultado = calcular_area_do_triangulo(5, 8)
+                print(f'A área do triângulo é de {resultado} m²')
+            elif resposta == '5':
+                contagem_progressiva(10)
+            elif resposta == '6':
+                apoiar_candidato('Murphy', 13)
+            elif resposta == '7':
+                brincar_de_plim(7)
+            else:
+                print('Você digitou uma opção inválida. Escolha uma opção de 1 a 7')
+        else:
+            print("Você escolheu sair. Volte Sempre!")
